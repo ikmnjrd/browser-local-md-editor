@@ -6,7 +6,7 @@
   "keywords": ["markdown-it", "markdown-editor", "text", "html"],
   "scripts": {
     "build": "node build && node migrate",
-    "migrate": "node migrate"
+    "dev": "echo 'TODO: add this option'"
   },
   "author": "ike",
   "license": "Unlicense",
