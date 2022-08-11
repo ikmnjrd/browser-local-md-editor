@@ -22,4 +22,6 @@ const migratedHTML = html.replace('SCRIPT_TARGET', js)
 const result = minify(migratedHTML, options);
 
 fs.writeFileSync('dist/index.html', result)
+fs.writeFileSync('dist/uri.txt', 'data:text/html,' + encodeURIComponent(result))
+
 console.log('finish!!')
