@@ -5,7 +5,6 @@ const hookKeyList = [9];
 
 /* DOMの読み込み完了時にイベント登録などの諸々 */
 globalThis.document.addEventListener('DOMContentLoaded', function() {
-  console.log('hoge')
   const preEl = globalThis.document.getElementById('content');
   const divEl = globalThis.document.getElementById('preview');
   init(preEl, divEl);
