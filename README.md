@@ -11,7 +11,7 @@ Above code is bundled with `./index.html` and `./index.js`, [markdown-it](https:
 
 ## Next Feature
 - [x] Working on disconnect with internet.
-- [ ] Save text in LocalStorage, tempolary.
+- [x] Save text in LocalStorage, tempolary.
 
 
 ## Dev
