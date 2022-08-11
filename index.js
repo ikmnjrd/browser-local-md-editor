@@ -12,13 +12,7 @@ globalThis.document.addEventListener('DOMContentLoaded', function() {
 
 function init(editerEl, previewEl) {
   /* 初期描画 */
-  const tempText = getTempData()
-  if (tempText) {
-    previewEl.innerHTML = md.render(tempText)
-    editerEl.innerText = tempText
-  } else {
-    previewEl.innerHTML = md.render(editerEl.innerText);
-  }
+  previewEl.innerHTML = md.render(editerEl.innerText);
 
   /* 文字の入力イベント登録 */
   editerEl.onkeydown = function onKeyDown(e) {
@@ -39,10 +33,3 @@ function init(editerEl, previewEl) {
     setTempData(e.target.innerText)
   };
 };
-
-function setTempData(preString) {
-  localStorage.setItem('mdlocal', preString);
-}
-function getTempData() {
-  return localStorage.getItem('mdlocal');
-}
