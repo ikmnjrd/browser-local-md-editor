@@ -1,41 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13/dist/markdown-it.min.js">
-    </script>
-    <script type="text/javascript">
-      const md = window.markdownit();
-      /* [Tab] */
-      const hookKeyList = [9];
-
-      /* DOMの読み込み完了時にイベント登録などの諸々 */
-      document.addEventListener('DOMContentLoaded', function() {
-        const preEl = document.getElementById('content');
-        const divEl = document.getElementById('preview');
-        init(preEl, divEl);
-      }, { once: true });
-
-      function init(editerEl, previewEl) {
-        /* 初期描画 */
-        previewEl.innerHTML = md.render(editerEl.innerText);
-
-        /* 文字の入力イベント登録 */
-        editerEl.onkeydown = function onKeyDown(e) {
-          if (hookKeyList.includes(e.keyCode)) { /* tab key */
-              e.preventDefault();
-          };
-        };
-        editerEl.onkeyup = (e) => {
-          if (e.keyCode === 9) { /* [tab] */
-              /* whitespace * 2 */
-              document.execCommand('insertHTML', false, '  ');
-          } else if (e.keyCode === 13) {/* [enter] */
-          };
-
-          previewEl.innerHTML = md.render(e.target.innerText);
-        };
-      };
-    </script>
+    <script>SCRIPT_TARGET</script>
   </head>
   <body>
     <div id="body" style="

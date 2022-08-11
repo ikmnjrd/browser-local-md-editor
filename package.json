@@ -1,0 +1,21 @@
+{
+  "name": "browser-local-md-editor",
+  "version": "1.0.0",
+  "description": "Markdown editor works instantly on your web browser locally.",
+  "main": "dist/index.html",
+  "keywords": ["markdown-it", "markdown-editor", "text", "html"],
+  "scripts": {
+    "build": "node build && node migrate",
+    "migrate": "node migrate"
+  },
+  "author": "ike",
+  "license": "Unlicense",
+  "devDependencies": {
+    "esbuild": "^0.15.1",
+    "html-minifier": "^4.0.0",
+    "punycode": "^2.1.1"
+  },
+  "dependencies": {
+    "markdown-it": "^13.0.1"
+  }
+}
