@@ -7,10 +7,11 @@ const hookKeyList = [9];
 globalThis.document.addEventListener('DOMContentLoaded', function() {
   const preEl = globalThis.document.getElementById('content');
   const divEl = globalThis.document.getElementById('preview');
-  init(preEl, divEl);
+  const saveEl = globalThis.document.getElementById('saveButton');
+  init(preEl, divEl, saveEl);
 }, { once: true });
 
-function init(editerEl, previewEl) {
+function init(editerEl, previewEl, saveBtnEl) {
   /* 初期描画 */
   previewEl.innerHTML = md.render(editerEl.innerText);
 
@@ -28,6 +29,22 @@ function init(editerEl, previewEl) {
     };
 
     previewEl.innerHTML = md.render(e.target.innerText);
-
   };
+
+  /* ダウンロードボタン */
+  attachSaveFunc(saveBtnEl, editerEl);
 };
+
+function attachSaveFunc(saveEl, contentEl) {
+  saveEl.onclick = () => {
+    const now = new Date();
+    const tempLink = document.createElement("a");
+    const textBlob = new Blob([contentEl.innerText], {type: 'text/plain'});
+
+    tempLink.setAttribute('href', URL.createObjectURL(textBlob));
+    tempLink.setAttribute('download', `${now.toLocaleDateString()}.md`);
+    tempLink.click();
+
+    URL.revokeObjectURL(tempLink.href);
+  }
+}
