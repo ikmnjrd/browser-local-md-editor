@@ -29,7 +29,5 @@ function init(editerEl, previewEl) {
 
     previewEl.innerHTML = md.render(e.target.innerText);
 
-    /* 毎回ローカルストレージに保存 */
-    setTempData(e.target.innerText)
   };
 };
